@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>朱鑫欢的技术博客</title>
+    <link rel="stylesheet" type="text/css" href="./demo.css">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container header-container">
+            <a href="https://www.baidu.com" class="logo">前端技术博客</a>
+            <button class="hamburger" id="hamburger">☰</button>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#about">关于我</a></li>
+                    <li><a href="#blog">博客</a></li>
+                    <li><a href="#contact">联系我</a></li>
+                    <li>
+                        <button class="theme-toggle" id="themeToggle">🌙</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首页内容 -->
+    <section id="home">
+        <!-- 英雄区域 -->
+        <div class="hero">
+            <div class="container">
+                <h1>欢迎来到我的技术博客</h1>
+                <p>分享前端开发、JavaScript框架、响应式设计的内容</p>
+            </div>
+        </div>
+
+        <!-- 主要内容区域 -->
+        <div class="container main-content">
+            <main>
+                <article class="post-card">
+                    <img src="./resource/a.jpg" alt="Vue.js响应式原理" class="post-image">
+                    <div class="post-content">
+                        <h2 class="post-title">深入理解Vue.js响应式原理</h2>
+                        <div class="post-meta">发布于 2025-10-1 | 分类: <a href="#">Vue.js</a></div>
+                        <p class="post-excerpt">本文将深入探讨Vue.js的响应式系统是如何工作的，从Object.defineProperty到Proxy，以及依赖收集和派发更新的完整流程...</p>
+                        <div class="post-full" id="content1">
+                            <h3>什么是响应式系统？</h3>
+                            <p>响应式系统是Vue.js的核心特性之一，它能够自动追踪数据变化并更新相关的DOM。当你修改数据时，视图会自动更新，无需手动操作DOM。</p>
+                            <h3>Object.defineProperty</h3>
+                            <p>在Vue 2.x中，响应式系统是基于Object.defineProperty实现的。这个方法可以定义或修改对象的属性，并通过getter和setter拦截对属性的访问和修改。</p>
+                            <h3>Proxy的优势</h3>
+                            <p>Vue 3.x使用ES6的Proxy替代Object.defineProperty，Proxy能够拦截整个对象而不仅仅是属性，提供了更强大的拦截能力。</p>
+                            
+                            <h3>依赖收集</h3>
+                            <p>当组件渲染时，会访问响应式数据，触发getter，此时Vue会将当前的渲染函数收集为依赖。当数据变化时，setter会通知所有依赖进行更新。</p>
+                            
+                            <h3>派发更新</h3>
+                            <p>当响应式数据发生变化时，setter会触发依赖的更新，重新执行渲染函数，生成新的虚拟DOM，然后通过Diff算法对比并更新真实DOM。</p>
+                            
+                            <p>通过理解Vue.js的响应式原理，我们可以更好地使用Vue.js，并在遇到问题时能够快速定位和解决。</p>
+                        </div>
+                        <a href="#" class="read-more" data-target="content1">阅读全文</a>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="./resource/b.jpg" alt="CSS Grid布局" class="post-image">
+                    <div class="post-content">
+                        <h2 class="post-title">CSS Grid布局完全指南</h2>
+                        <div class="post-meta">发布于 2025-10-1 | 分类: <a href="#">CSS</a></div>
+                        <p class="post-excerpt">CSS Grid布局是现代Web开发中最强大的布局系统之一。本文将详细介绍Grid的所有属性，并通过实例展示如何创建复杂的响应式布局...</p>
+                        <div class="post-full" id="content2">
+                            <h3>Flexbox布局</h3>
+                            <p>Flexbox是一维布局模型，适合在单个维度（行或列）上排列元素。它非常适合组件和小规模布局。</p>
+                            
+                            <h4>Flexbox的优势：</h4>
+                            <ul>
+                                <li>简单的一维布局</li>
+                                <li>内容驱动的尺寸调整</li>
+                                <li>强大的对齐能力</li>
+                                <li>适合导航、卡片等组件</li>
+                            </ul>
+                            
+                            <h3>CSS Grid布局</h3>
+                            <p>CSS Grid是二维布局系统，可以同时处理行和列。它非常适合整个页面的布局。</p>
+                            
+                            <h4>Grid的优势：</h4>
+                            <ul>
+                                <li>复杂的二维布局</li>
+                                <li>精确的网格定位</li>
+                                <li>容器驱动的布局</li>
+                                <li>适合页面整体结构</li>
+                            </ul>
+                            
+                            <h3>如何选择？</h3>
+                            <p>一般来说：</p>
+                            <ul>
+                                <li>使用Flexbox进行一维布局（水平或垂直）</li>
+                                <li>使用Grid进行二维布局（同时控制行和列）</li>
+                                <li>可以在Grid项目内部使用Flexbox</li>
+                                <li>可以在Flex项目内部使用Grid</li>
+                            </ul>
+                            
+                            <p>理解两者的区别和适用场景，可以帮助我们选择最合适的布局方案，提高开发效率。</p>
+                        </div>
+                    
+                    <a href="#" class="read-more" data-target="content2">阅读全文</a>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="./resource/c.jpg" alt="JavaScript性能优化" class="post-image">
+                    <div class="post-content">
+                        <h2 class="post-title">JavaScript性能优化最佳实践</h2>
+                        <div class="post-meta">发布于 2025-10-1 | 分类: <a href="#">JavaScript</a></div>
+                        <p class="post-excerpt">性能是前端开发中不可忽视的重要方面。本文总结了JavaScript性能优化的多种技巧，包括减少重绘重排、防抖节流、代码分割等...</p>
+                        <div class="post-full" id="content3">
+                            <h3>箭头函数</h3>
+                            <p>箭头函数提供了更简洁的函数语法，并且不绑定自己的this、arguments、super或new.target。</p>
+                            
+                            <h3>解构赋值</h3>
+                            <p>解构赋值允许我们从数组或对象中提取数据，并赋值给变量，使代码更简洁易读。</p>
+                            
+                            <h3>模板字符串</h3>
+                            <p>模板字符串使用反引号(`)定义，可以嵌入表达式和多行文本，大大简化了字符串拼接。</p>
+                            
+                            <h3>模块化</h3>
+                            <p>ES6引入了原生的模块系统，使用import和export关键字，使JavaScript代码可以模块化组织。</p>
+                            
+                            <h3>Promise和异步编程</h3>
+                            <p>Promise提供了更优雅的异步编程解决方案，避免了回调地狱，并且为async/await奠定了基础。</p>
+                            
+                            <h3>Class类</h3>
+                            <p>ES6引入了class关键字，提供了更接近传统面向对象语言的语法，但本质上仍然是基于原型的继承。</p>
+                            
+                            <h3>其他重要特性</h3>
+                            <ul>
+                                <li>let和const声明</li>
+                                <li>默认参数值</li>
+                                <li>展开运算符(...)</li>
+                                <li>Set和Map数据结构</li>
+                                <li>Symbol数据类型</li>
+                            </ul>
+                            
+                            <p>掌握ES6+的新特性对于现代JavaScript开发至关重要，这些特性大大提高了开发效率和代码质量。</p>
+                        </div>
+                    
+                    <a href="#" class="read-more" data-target="content3">阅读全文</a>
+                    </div>
+                </article>
+            </main>
+
+            <!-- 侧边栏 -->
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>关于我</h3>
+                    <p>一名热爱前端开发的应届生，专注于Vue.js和响应式Web设计。</p>
+                    <a href="#about">查看更多</a>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>分类</h3>
+                    <ul class="categories-list">
+                        <li><a href="#">Vue.js (5)</a></li>
+                        <li><a href="#">React (3)</a></li>
+                        <li><a href="#">JavaScript (8)</a></li>
+                        <li><a href="#">CSS (6)</a></li>
+                        <li><a href="#">性能优化 (4)</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>标签云</h3>
+                    <div class="tags-list">
+                        <a href="#" class="tag">Vue3</a>
+                        <a href="#" class="tag">Composition API</a>
+                        <a href="#" class="tag">响应式设计</a>
+                        <a href="#" class="tag">Flexbox</a>
+                        <a href="#" class="tag">Grid</a>
+                        <a href="#" class="tag">ES6</a>
+                        <a href="#" class="tag">TypeScript</a>
+                        <a href="#" class="tag">Webpack</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- 关于我页面 -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">关于我</h2>
+            <div class="about-content">
+                <div>
+                    <img src="./resource/d.jpg" alt="个人头像" class="profile-image">
+                </div>
+                <div>
+                    <h3>前端开发爱好者</h3>
+                    <p>我是一名计算机科学专业的应届毕业生，对前端开发充满热情。在校期间，我系统学习了HTML、CSS、JavaScript等前端技术，并深入研究了Vue.js框架。</p>
+                    <p>我热爱学习新技术，享受解决复杂问题的过程。除了技术学习，我还喜欢阅读技术博客、参加技术分享会，并与同行交流。</p>
+                    
+                    <h4 style="margin-top: 1.5rem;">技能</h4>
+                    <div class="skills-list">
+                        <span class="skill">HTML5</span>
+                        <span class="skill">CSS3</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">Vue.js</span>
+                        <span class="skill">React</span>
+                        <span class="skill">Git</span>
+                        <span class="skill">Webpack</span>
+                        <span class="skill">响应式设计</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我页面 -->
+    <section id="contact" style="padding: 4rem 0; background-color: var(--card-bg);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">联系我</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">邮箱</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">主题</label>
+                    <input type="text" id="subject" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">留言</label>
+                    <textarea id="message" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">发送消息</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 我的技术博客. 保留所有权利.</p>
+            <div class="social-links">
+                <a href="#" title="GitHub">GitHub</a>
+                <a href="#" title="微博">微博</a>
+                <a href="#" title="知乎">知乎</a>
+                <a href="#" title="邮箱">邮箱</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/demo.js"></script>
+</body>
+</html>
